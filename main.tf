@@ -7,3 +7,7 @@ provider "tfe" {
   token    = var.token
 }
 
+resource "tfe_organization" "tfe_organization" {
+  name  = var.tfe_organization
+  email = var.tfe_email
+}
