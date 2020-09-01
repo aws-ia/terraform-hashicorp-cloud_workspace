@@ -1,2 +1,2 @@
-# quickstart-aws-vpc-ft
-QuickStart AWS VPC in Terraform
+# Terraform Cloud Workspace
+This QuickStart Setup your terraform workspace
