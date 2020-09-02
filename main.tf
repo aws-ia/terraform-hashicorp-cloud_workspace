@@ -4,10 +4,16 @@ terraform {
 
 provider "tfe" {
   hostname = var.tfe_hostname
-  token    = var.token
+  token    = var.tfe_token
 }
 
-resource "tfe_organization" "tfe_organization" {
+resource "tfe_organization" "org" {
   name  = var.tfe_organization
   email = var.tfe_email
+}
+
+
+resource "tfe_workspace" "workspace" {
+  name         = var.tfe_workspace
+  organization = tfe_organization.org.name
 }
