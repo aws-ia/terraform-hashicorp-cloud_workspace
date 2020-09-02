@@ -8,3 +8,9 @@ variable "tfe_hostname" {
 variable "tfe_organization" {
   type = string
 }
+variable "tfe_email" {
+  type = string
+}
+variable "tfe_workspace" {
+  type = string
+}
