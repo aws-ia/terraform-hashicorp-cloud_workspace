@@ -20,7 +20,7 @@ resource "random_pet" "name" {
 resource "random_string" "rand4" {
   length = 4
   special = false
-  lower = true
+  upper = false 
 }
 
 resource "tfe_organization" "qs-org" {
