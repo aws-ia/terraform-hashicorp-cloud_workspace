@@ -1,18 +1,10 @@
 # Terraform Cloud Workspace
 This module sets up your terraform org and workspace
 
-
 ### Pre-Requisites
-Install terraform on workstation
-Terraform Cloud account
+Install Terraform cli on workstation [link to installation docs](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 
-
-### Terraform Cloud 
-Login here https://app.terraform.io/
-
-or
-
-Create a free account here https://app.terraform.io/signup/account 
+Login to Terraform Cloud account [here](https://app.terraform.io/) or  [create a free account](https://app.terraform.io/signup/account)
 
 ### Setup Terraform Credentials
 
