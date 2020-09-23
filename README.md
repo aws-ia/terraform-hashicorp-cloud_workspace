@@ -1,5 +1,6 @@
 # Terraform Cloud Workspace
-This QuickStart Setup your terraform workspace
+This module sets up your terraform org and workspace
+
 
 ### Pre-Requisites
 Install terraform on workstation
