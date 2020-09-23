@@ -1,16 +1,22 @@
 # Terraform Cloud Workspace
 This QuickStart Setup your terraform workspace
 
-## Step 1. Create a terraform cloud account
-Login in [here](https://app.terraform.io/) | Register [here](https://www.terraform.io/)
+### Pre-Requisites
+Install terraform on workstation
+Terraform Cloud account
 
-## Step 2. From the Terraform Cloud Console create a 
-![TFC-Token2](https://user-images.githubusercontent.com/5912128/91911615-4d8b1000-ec66-11ea-91b8-120c1959ef31.png)
-**Choose Setting >  API Token**
 
-## Step 3. Create token
-![TFC-Token3](https://user-images.githubusercontent.com/5912128/91912066-30a30c80-ec67-11ea-926f-ec48e607ba1d.png)
-**Choose Create an authentication token
+### Terraform Cloud 
+Login here https://app.terraform.io/
 
-## Step 4. Copy token to clipboard
-![TFC-Token4](https://user-images.githubusercontent.com/5912128/91912289-a8713700-ec67-11ea-8488-ee207314bf2b.png)
+or
+
+Create a free account here https://app.terraform.io/signup/account 
+
+### Setup Terraform Credentials
+
+Open a shell on you workstation and export the following variable
+
+`export TERRAFORM_CONFIG=$HOME/.terraform.d/credentials.tfrc.json`
+
+![tf_login](https://user-images.githubusercontent.com/5912128/94082035-da803f80-fdb4-11ea-902c-e4aa1003ac22.gif)
