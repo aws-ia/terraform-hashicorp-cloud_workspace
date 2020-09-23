@@ -29,7 +29,7 @@ resource "tfe_organization" "qs-org" {
 }
 
 resource "tfe_workspace" "qs-workspace" {
-  name         = "${var.tfe_workspace == "" ? local.random_workspace : var.tfe_workspace}"
+  name         = var.tfe_workspace == "" ? local.random_workspace : var.tfe_workspace
   organization = tfe_organization.qs-org.name
 }
 
