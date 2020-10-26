@@ -1,5 +1,9 @@
 
-**WARNING:** This repo is in development **DO NOT USE**
+### Authors:
+- David Wright, dwright@hashicorp.com
+- Tony Vattathil, tonynv@amazon.com
+
+
 # Terraform Cloud Workspace
 This module sets up your terraform org and workspace
 
