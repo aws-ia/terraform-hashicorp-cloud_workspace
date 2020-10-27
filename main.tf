@@ -25,7 +25,8 @@ resource "random_string" "rand4" {
 
 resource "tfe_organization" "qs-org" {
   name  = var.tfe_organization == "" ? local.random_org : var.tfe_organization
-  email = "admin@your-company.com"
+  email = var.tfe_email == "" ? "someone@mycompany.com" : var.tfe_email
+
 }
 
 resource "tfe_workspace" "qs-workspace" {
