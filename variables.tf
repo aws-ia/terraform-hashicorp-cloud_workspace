@@ -1,21 +1,16 @@
 variable "tfe_hostname" {
-  type    = string
-  default = "app.terraform.io"
+  type        = string
+  default     = "app.terraform.io"
   description = "Defaults to terraform cloud"
 }
 variable "tfe_organization" {
-  type = string
+  type        = string
   description = "Leave empty for auto creation"
 }
 variable "tfe_email" {
   type = string
 }
 variable "tfe_workspace" {
-  type = string
+  type        = string
   description = "Leave empty for auto creation"
-}
-
-variable "repo_name" {
-  type = string
-  description = "Name of git repo"
 }
