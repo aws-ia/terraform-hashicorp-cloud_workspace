@@ -1,6 +1,6 @@
 
 # Terraform Cloud Workspace
-This module sets up your terraform org and workspace
+This module sets up your Terraform org and workspace.
 ## Authors:
 - David Wright, dwright@hashicorp.com
 - Tony Vattathil, tonynv@amazon.com
