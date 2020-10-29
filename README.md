@@ -11,7 +11,7 @@ This module sets up your Terraform org and workspace.
 
 
 ### Setup Terraform Credentials
-`terraform login`.
+`terraform login`
 
 ![tf_login](https://user-images.githubusercontent.com/5912128/94082035-da803f80-fdb4-11ea-902c-e4aa1003ac22.gif)
 
