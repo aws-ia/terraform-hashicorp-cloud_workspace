@@ -1,28 +1,28 @@
 
 # Terraform Cloud Workspace
-This module sets up your Terraform org and workspace.
-## Authors:
-- David Wright, dwright@hashicorp.com
-- Tony Vattathil, tonynv@amazon.com
+- David Wright (dwright@hashicorp.com)
+- Tony Vattathil (tonynv@amazon.com)
+
+This module configures your Terraform org and workspace.
 
 ## Pre-Requisites
-1. Install Terraform cli on workstation ([link to installation docs](https://learn.hashicorp.com/tutorials/terraform/install-cli)).
-2. Log in to your Terraform Cloud account [here](https://app.terraform.io/) or [create a free account](https://app.terraform.io/signup/account).
+1. Install Terraform ([link to Terraform installation tutorial](https://learn.hashicorp.com/tutorials/terraform/install-cli)).
+2. [Log in](https://app.terraform.io/) to Terraform Cloud or [create a free account](https://app.terraform.io/signup/account).
 
 
-### Setup Terraform Credentials
+## Setup Terraform Credentials
 `terraform login`
 
 ![tf_login](https://user-images.githubusercontent.com/5912128/94082035-da803f80-fdb4-11ea-902c-e4aa1003ac22.gif)
 
-### Configure Terraform
+## Configure Terraform
 
 1. Open a shell on your workstation.
-2. Point the TERRAFORM_CONFIG file to the credentials file created by `terraform login` in **Setup Terraform Credentials** above. This allows Terraform to autenticate via the token stored in your credentials.tfrc.json file.
+2. Run the following command to allow authentication of Terraform via the token stored in your credentials.tfrc.json file.
 
         export TERRAFORM_CONFIG=$HOME/.terraform.d/credentials.tfrc.json
 
-## Using this module via GitHub
+## Deploy from GitHub
 1. Git clone this repository.
 
         git clone https://github.com/aws-quickstart/terraform-aws-tfc_workspace.git
