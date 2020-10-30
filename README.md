@@ -24,7 +24,7 @@ This module configures your Terraform organization and workspace.
         export TERRAFORM_CONFIG=$HOME/.terraform.d/credentials.tfrc.json
 
 ## Deploy module on GitHub
-1. Git clone this repository.
+1. Clone this repository.
 
         git clone https://github.com/aws-quickstart/terraform-aws-tfc_workspace.git
 
