@@ -6,7 +6,7 @@
 This module configures your Terraform org and workspace.
 
 ## Pre-Requisites
-1. Install Terraform ([link to Terraform installation tutorial](https://learn.hashicorp.com/tutorials/terraform/install-cli)).
+1. Install Terraform. (See [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) for a tutorial.)
 2. [Log in](https://app.terraform.io/) to Terraform Cloud or [create a free account](https://app.terraform.io/signup/account).
 
 
