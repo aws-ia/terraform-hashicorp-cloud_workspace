@@ -3,7 +3,7 @@
 - David Wright (dwright@hashicorp.com)
 - Tony Vattathil (tonynv@amazon.com)
 
-This module configures your Terraform org and workspace.
+This module configures your Terraform organization and workspace.
 
 ## Pre-Requisites
 1. Install Terraform. (See [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) for a tutorial.)
@@ -22,7 +22,7 @@ This module configures your Terraform org and workspace.
 
         export TERRAFORM_CONFIG=$HOME/.terraform.d/credentials.tfrc.json
 
-## Deploy from GitHub
+## Deploy module on GitHub
 1. Git clone this repository.
 
         git clone https://github.com/aws-quickstart/terraform-aws-tfc_workspace.git
