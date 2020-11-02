@@ -17,14 +17,4 @@ To deploy this module, do the following:
 5. Run `terraform login`.
 6. Run `export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"`.
 7. Run `terraform init`.
-8. Run `terraform apply`.  
-
-
-
-
-
-
-![tf_login](https://user-images.githubusercontent.com/5912128/94082035-da803f80-fdb4-11ea-902c-e4aa1003ac22.gif)
-
-
-
+8. Run `terraform apply`.
