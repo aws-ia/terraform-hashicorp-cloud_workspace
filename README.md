@@ -1,7 +1,6 @@
 
 # Terraform Cloud Workspace
-This module configures your Terraform organization and workspace.
-
+This module configures your Terraform organization and workspace.  
 Authors: David Wright (dwright@hashicorp.com) and Tony Vattahil (tonynv@amazon.com)
 
 To deploy this module, do the following:
@@ -19,6 +18,8 @@ To deploy this module, do the following:
 6. Run `export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"`.
 7. Run `terraform init`.
 8. Run `terraform apply`.
+
+
 
 
 
