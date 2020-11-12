@@ -42,6 +42,14 @@ resource "tfe_variable" "AWS_SECRET_ACCESS_KEY" {
   description  = "AWS_SECRET_ACCESS_KEY"
 }
 
+resource "tfe_variable" "AWS_ACCESS_KEY_ID" {
+  key          = "AWS_ACCESS_KEY_ID"
+  value        = var.AWS_ACCESS_KEY_ID
+  category     = "env"
+  workspace_id = tfe_workspace.qs-workspace.id
+  description  = "AWS_ACCESS_KEY_ID"
+}
+
 resource "null_resource" "backend_file" {
   depends_on = [tfe_workspace.qs-workspace]
   provisioner "local-exec" {
