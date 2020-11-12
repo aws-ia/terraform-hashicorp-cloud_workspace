@@ -14,3 +14,10 @@ variable "tfe_workspace" {
   type        = string
   description = "Leave empty for auto creation"
 }
+variable "AWS_ACCESS_KEY_ID" {
+  type = string
+}
+
+variable "AWS_SECRET_ACCESS_KEY" {
+  type = string
+}

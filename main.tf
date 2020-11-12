@@ -33,6 +33,15 @@ resource "tfe_workspace" "qs-workspace" {
   organization = var.tfe_organization != "" ? var.tfe_organization : tfe_organization.qs-org[0].name
 }
 
+resource "tfe_variable" "AWS_SECRET_ACCESS_KEY" {
+  key          = "AWS_SECRET_ACCESS_KEY"
+  value        = var.AWS_SECRET_ACCESS_KEY
+  sensitive    = true
+  category     = "env"
+  workspace_id = tfe_workspace.qs-workspace.id
+  description  = "AWS_SECRET_ACCESS_KEY"
+}
+
 resource "null_resource" "backend_file" {
   depends_on = [tfe_workspace.qs-workspace]
   provisioner "local-exec" {
