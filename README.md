@@ -1,5 +1,5 @@
 
-# Terraform Cloud Workspace (Developer Preview)
+# Terraform Cloud Workspace 
 This module configures your Terraform organization and workspace.  
 Authors: David Wright (dwright@hashicorp.com) and Tony Vattahil (tonynv@amazon.com)
 
