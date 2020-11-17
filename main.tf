@@ -28,9 +28,10 @@ resource "tfe_organization" "tf-org" {
 }
 
 resource "tfe_workspace" "tf-workspace" {
-  depends_on   = [tfe_organization.tf-org]
-  name         = var.tfe_workspace == "" ? local.random_workspace : var.tfe_workspace
-  organization = var.tfe_organization != "" ? var.tfe_organization : tfe_organization.tf-org[0].name
+  depends_on        = [tfe_organization.tf-org]
+  name              = var.tfe_workspace == "" ? local.random_workspace : var.tfe_workspace
+  organization      = var.tfe_organization != "" ? var.tfe_organization : tfe_organization.tf-org[0].name
+  working_directory = var.working_directory
 }
 
 resource "tfe_variable" "AWS_SECRET_ACCESS_KEY" {
