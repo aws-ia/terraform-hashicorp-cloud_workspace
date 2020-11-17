@@ -15,13 +15,16 @@ variable "tfe_workspace" {
   description = "Leave empty for auto creation"
 }
 variable "AWS_ACCESS_KEY_ID" {
-  type = string
+  type        = string
+  description = "AWS_ACCESS_KEY_ID"
 }
 
 variable "AWS_SECRET_ACCESS_KEY" {
-  type = string
+  type        = string
+  description = "AWS_SECRET_ACCESS_KEY"
 }
 variable "working_directory" {
-  type    = string
-  default = "./"
+  description = "Sets the working directory"
+  type        = string
+  default     = "./"
 }
