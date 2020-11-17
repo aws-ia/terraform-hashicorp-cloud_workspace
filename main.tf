@@ -6,7 +6,7 @@
 
 locals {
   delimiter        = "-"
-  org_prefix       = "aws-quickstart"
+  org_prefix       = "tfm-aws"
   random_workspace = "${local.org_prefix}${local.delimiter}${random_string.rand4.result}"
   random_org       = "${local.org_prefix}${local.delimiter}${random_pet.name.id}"
 }
