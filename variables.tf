@@ -8,7 +8,8 @@ variable "tfe_organization" {
   description = "Leave empty for auto creation"
 }
 variable "tfe_email" {
-  type = string
+  description = "Sets email"
+  type        = string
 }
 variable "tfe_workspace" {
   type        = string
