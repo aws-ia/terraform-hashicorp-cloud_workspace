@@ -8,7 +8,7 @@ variable "tfe_organization" {
   description = "Leave empty for auto creation"
 }
 variable "tfe_email" {
-  description = "Sets email"
+  description = "Enter a valid email address for terraform cloud notification"
   type        = string
 }
 variable "tfe_workspace" {
