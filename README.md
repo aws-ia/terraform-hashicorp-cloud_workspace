@@ -10,19 +10,23 @@ To deploy this module, do the following:
 # Sign up for Terraform Cloud
 2. Sign up and log into [Terraform Cloud](https://app.terraform.io/signup/account). (There is a free tier available.)
 
-## Generate terraform cloud token
+## Configure Terraform Cloud API Access
 
-      `terraform login` 
-      
-      `export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"`
+1. Generate terraform cloud token
+
+`terraform login` 
+
+2. Export TERRAFORM_CONFIG
+
+`export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"`
 
 # Configure your tfvars file
 
 **Example tfvas file (replace *** with AKEY and SKEY)**
 
-  `AWS_SECRET_ACCESS_KEY` = "*****************"
+`AWS_SECRET_ACCESS_KEY` = "*****************"
 
-  `AWS_ACCESS_KEY_ID`     = "*****************"
+`AWS_ACCESS_KEY_ID`     = "*****************"
 
 > !!!!CAUTION!!!!: Make sure your credential are secured ourside version control (and follow secrets mangement bestpractices)
 
@@ -34,17 +38,17 @@ To deploy this module, do the following:
 
 1. Clone the **aws-quickstart/terraform-tfc_workspace** repository.
 
-        `git clone https://github.com/aws-quickstart/terraform-aws-tfc_workspace.git`
+`git clone https://github.com/aws-quickstart/terraform-aws-tfc_workspace.git`
 
 2. Change directory to the root directory.
 
-        `cd terraform-aws-tfc_workspace`
+`cd terraform-aws-tfc_workspace`
 
 3. Initalize terrafrom module
 
-        `terraform init`
+`terraform init`
 
 4.  Run terraform apply with tfvars file
 
-        `terraform apply  -var-file="/Users/username/.aws/terraform.tfvars"`
+`terraform apply  -var-file="/Users/username/.aws/terraform.tfvars"`
 
