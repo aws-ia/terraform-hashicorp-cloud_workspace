@@ -22,7 +22,7 @@ Export TERRAFORM_CONFIG
 
 # Configure your tfvars file
 
-**Example tfvas file (replace *** with AKEY and SKEY)**
+**Example tfvars file (replace *** with AKEY and SKEY)**
 
 `AWS_SECRET_ACCESS_KEY` = "*****************"
 
