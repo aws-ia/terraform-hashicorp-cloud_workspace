@@ -56,7 +56,7 @@ resource "tfe_variable" "AWS_ACCESS_KEY_ID" {
 }
 
 resource "local_file" "backend_file" {
-  filename = "backend2.hcl"
+  filename = "backend.hcl"
   content  = <<EOF
 workspaces { name = "${tfe_workspace.tf-workspace.name}" }
 hostname = "${var.tfe_hostname}"
