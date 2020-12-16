@@ -4,6 +4,10 @@
 # export TERRAFORM_CONFIG=$HOME/.terraform.d/credentials.tfrc.json"
 ##########
 
+provider "tfe" {
+  hostname = var.tfe_hostname
+}
+
 locals {
   delimiter        = "-"
   org_prefix       = "tfm-aws"
@@ -51,15 +55,11 @@ resource "tfe_variable" "AWS_ACCESS_KEY_ID" {
   description  = "AWS_ACCESS_KEY_ID"
 }
 
-resource "null_resource" "backend_file" {
-  depends_on = [tfe_workspace.tf-workspace]
-  provisioner "local-exec" {
-    command = "echo  workspaces '{' name = \\\"${tfe_workspace.tf-workspace.name}\\\" '}' > backend.hcl"
-  }
-  provisioner "local-exec" {
-    command = "echo hostname = \\\"app.terraform.io\\\" >> backend.hcl"
-  }
-  provisioner "local-exec" {
-    command = "echo  organization = \\\"${tfe_workspace.tf-workspace.organization}\\\" >> backend.hcl"
-  }
+resource "local_file" "backend_file" {
+  filename = "backend.hcl"
+  content  = <<EOF
+workspaces { name = "${tfe_workspace.tf-workspace.name}" }
+hostname = "${var.tfe_hostname}"
+organization = "${tfe_workspace.tf-workspace.organization}"
+EOF
 }
