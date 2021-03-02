@@ -27,5 +27,5 @@ variable "AWS_SECRET_ACCESS_KEY" {
 variable "working_directory" {
   description = "Sets the working directory"
   type        = string
-  default     = "./"
+  default     = ""
 }
