@@ -1,3 +1,8 @@
+variable "region" {
+  type        = string
+  default     = ""
+  description = "terraform region var"
+}
 variable "tfe_hostname" {
   type        = string
   default     = "app.terraform.io"

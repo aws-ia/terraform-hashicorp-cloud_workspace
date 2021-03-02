@@ -55,6 +55,14 @@ resource "tfe_variable" "AWS_ACCESS_KEY_ID" {
   description  = "AWS_ACCESS_KEY_ID"
 }
 
+resource "tfe_variable" "region" {
+  key          = "region"
+  value        = var.region
+  category     = "terraform"
+  workspace_id = tfe_workspace.tf-workspace.id
+  description  = "AWS Region"
+}
+
 resource "local_file" "backend_file" {
   filename = "backend.hcl"
   content  = <<EOF
