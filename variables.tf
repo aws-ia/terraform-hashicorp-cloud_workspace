@@ -24,10 +24,14 @@ variable "AWS_ACCESS_KEY_ID" {
   type        = string
   description = "AWS_ACCESS_KEY_ID"
 }
-
 variable "AWS_SECRET_ACCESS_KEY" {
   type        = string
   description = "AWS_SECRET_ACCESS_KEY"
+}
+variable "AWS_SESSION_TOKEN" {
+  type        = string
+  description = "AWS Session Token (optional but highly recommended)"
+  default     = ""
 }
 variable "working_directory" {
   description = "Sets the working directory"

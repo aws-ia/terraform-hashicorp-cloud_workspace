@@ -28,6 +28,10 @@ Export TERRAFORM_CONFIG
 
 `AWS_ACCESS_KEY_ID`     = "*****************"
 
+`AWS_SECRET_ACCESS_KEY` = "*****************"
+
+Note: STS-based credentials _are optional_ but *highly recommended*. 
+
 > !!!!CAUTION!!!!: Make sure your credential are secured ourside version control (and follow secrets mangement bestpractices)
 
 # Deploy this module (instruction for linux or mac)

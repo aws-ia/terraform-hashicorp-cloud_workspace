@@ -54,7 +54,15 @@ resource "tfe_variable" "AWS_ACCESS_KEY_ID" {
   workspace_id = tfe_workspace.tf-workspace.id
   description  = "AWS_ACCESS_KEY_ID"
 }
-
+resource "tfe_variable" "AWS_SESSION_TOKEN" {
+  count        = var.AWS_SESSION_TOKEN == "" ? 0 : 1
+  key          = "AWS_SESSION_TOKEN"
+  value        = var.AWS_SESSION_TOKEN
+  category     = "env"
+  workspace_id = tfe_workspace.tf-workspace.id
+  description  = "AWS_SESSION_TOKEN"
+  sensitive    = true
+}
 resource "tfe_variable" "region" {
   key          = "region"
   value        = var.region
