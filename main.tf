@@ -4,6 +4,11 @@
 # export TERRAFORM_CONFIG=$HOME/.terraform.d/credentials.tfrc.json"
 ##########
 
+terraform {
+  required_version = ">= 0.15.1"
+
+}
+
 provider "tfe" {
   hostname = var.tfe_hostname
 }

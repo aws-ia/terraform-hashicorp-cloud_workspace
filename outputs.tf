@@ -2,7 +2,7 @@
 
 output "tfm-aws-org-name" {
   description = "Terraform cloud organization name"
-  value       = var.tfe_organization == "" ? element(concat(tfe_organization.tf-org.*.name, list("")), 0) : var.tfe_organization
+  value       = var.tfe_organization == "" ? element(concat(tfe_organization.tf-org.*.name, [""]), 0) : var.tfe_organization
 }
 
 output "tfm-aws-workspace-name" {
