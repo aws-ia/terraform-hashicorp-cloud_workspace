@@ -54,5 +54,5 @@ Initalize terrafrom module
 
 Run terraform apply with tfvars file
 
-`terraform apply  -var-file="/Users/username/.aws/terraform.tfvars"`
+`terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`
 
