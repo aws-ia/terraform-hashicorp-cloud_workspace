@@ -40,13 +40,13 @@ Note: STS-based credentials _are optional_ but *highly recommended*.
 
 > !!!!WARNING!!!!: Run these commands in order:
 
-Clone the **aws-quickstart/terraform-tfc_workspace** repository.
+Clone the **aws-ia/terraform-hashicorp-cloud_workspace** repository.
 
-`git clone https://github.com/aws-quickstart/terraform-aws-tfc_workspace.git`
+`git clone https://github.com/aws-ia/terraform-hashicorp-cloud_workspace.git`
 
 Change directory to the root directory.
 
-`cd terraform-aws-tfc_workspace`
+`cd terraform-hashicorp-cloud_workspace`
 
 Initalize terrafrom module
 
