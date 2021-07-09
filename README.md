@@ -34,25 +34,36 @@ Note: STS-based credentials _are optional_ but *highly recommended*.
 
 > !!!!CAUTION!!!!: Make sure your credential are secured ourside version control (and follow secrets mangement bestpractices)
 
-# Deploy this module (instruction for linux or mac)
-
-## Clone the repo (requires git client)
-
-> !!!!WARNING!!!!: Run these commands in order:
+# How to use this module to setup the deploy example for your module (instruction for linux or mac)
 
 Clone the **aws-ia/terraform-hashicorp-cloud_workspace** repository.
 
 `git clone https://github.com/aws-ia/terraform-hashicorp-cloud_workspace.git`
 
-Change directory to the root directory.
+Copy **terraform-hashicorp-cloud_workspace/setup_workspace** folder to the root of your module 
 
-`cd terraform-hashicorp-cloud_workspace`
+eg: `cp terraform-hashicorp-cloud_workspace/setup_workspace /path/to/your/module`
 
-Initalize terrafrom module
+Create `deploy` folder in the root of your module.
 
-`terraform init`
+eg: `mkdir /path/to/your/module/deploy`
 
-Run terraform apply with tfvars file
+Change to setup_workspace directory
 
-`terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`
+`cd /path/to/your/module/setup_workspace`
+
+Run to following commands in order:
+
+terraform init
+
+`terraform apply` or `terraform apply -var-file="$HOME/.aws/terraform.tfvars"`
+
+> This command generates a `backend.hcl`
+
+cd ../deploy
+
+You will see a backend.hcl for newly created workspace
+
+
+
 
