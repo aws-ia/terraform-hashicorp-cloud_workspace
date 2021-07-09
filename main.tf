@@ -16,8 +16,8 @@ provider "tfe" {
 locals {
   delimiter        = "-"
   prefix           = "aws-ia"
-  random_workspace = "ws-${local.prefix}${local.delimiter}${random_string.rand8.result}"
-  random_org       = "${local.prefix}${local.delimiter}${random_string.rand4.result}"
+  random_workspace = "w-${local.prefix}${local.delimiter}${random_string.rand6.result}"
+  random_org       = "o-${local.prefix}${local.delimiter}${random_string.rand8.result}"
 }
 
 resource "random_string" "rand8" {
@@ -25,9 +25,8 @@ resource "random_string" "rand8" {
   special = false
   upper   = false
 }
-
-resource "random_string" "rand4" {
-  length  = 4
+resource "random_string" "rand6" {
+  length  = 6
   special = false
   upper   = false
 }
@@ -38,7 +37,7 @@ resource "tfe_organization" "tf-org" {
   count = var.tfe_organization != "" ? 0 : 1
 }
 
-resource "tfe_workspace" "tf-workspace" {
+resource "tfe_workspace" "tf-ws" {
   depends_on        = [tfe_organization.tf-org]
   name              = var.tfe_workspace == "" ? local.random_workspace : var.tfe_workspace
   organization      = var.tfe_organization != "" ? var.tfe_organization : tfe_organization.tf-org[0].name
@@ -50,7 +49,7 @@ resource "tfe_variable" "AWS_SECRET_ACCESS_KEY" {
   value        = var.AWS_SECRET_ACCESS_KEY
   sensitive    = true
   category     = "env"
-  workspace_id = tfe_workspace.tf-workspace.id
+  workspace_id = tfe_workspace.tf-ws.id
   description  = "AWS_SECRET_ACCESS_KEY"
 }
 
@@ -58,7 +57,7 @@ resource "tfe_variable" "AWS_ACCESS_KEY_ID" {
   key          = "AWS_ACCESS_KEY_ID"
   value        = var.AWS_ACCESS_KEY_ID
   category     = "env"
-  workspace_id = tfe_workspace.tf-workspace.id
+  workspace_id = tfe_workspace.tf-ws.id
   description  = "AWS_ACCESS_KEY_ID"
 }
 resource "tfe_variable" "AWS_SESSION_TOKEN" {
@@ -66,7 +65,7 @@ resource "tfe_variable" "AWS_SESSION_TOKEN" {
   key          = "AWS_SESSION_TOKEN"
   value        = var.AWS_SESSION_TOKEN
   category     = "env"
-  workspace_id = tfe_workspace.tf-workspace.id
+  workspace_id = tfe_workspace.tf-ws.id
   description  = "AWS_SESSION_TOKEN"
   sensitive    = true
 }
@@ -74,15 +73,15 @@ resource "tfe_variable" "region" {
   key          = "region"
   value        = var.region
   category     = "terraform"
-  workspace_id = tfe_workspace.tf-workspace.id
+  workspace_id = tfe_workspace.tf-ws.id
   description  = "AWS Region"
 }
 
 resource "local_file" "backend_file" {
   filename = "backend.hcl"
   content  = <<EOF
-workspaces { name = "${tfe_workspace.tf-workspace.name}" }
+workspaces { name = "${tfe_workspace.tf-ws.name}" }
 hostname = "${var.tfe_hostname}"
-organization = "${tfe_workspace.tf-workspace.organization}"
+organization = "${tfe_workspace.tf-ws.organization}"
 EOF
 }
