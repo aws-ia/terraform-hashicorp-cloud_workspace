@@ -15,9 +15,9 @@ provider "tfe" {
 
 locals {
   delimiter        = "-"
-  org_prefix       = "tfm-aws"
-  random_workspace = "${local.org_prefix}${local.delimiter}${random_string.rand4.result}"
-  random_org       = "${local.org_prefix}${local.delimiter}${random_pet.name.id}"
+  prefix           = "aws-ia"
+  random_workspace = "${local.prefix}${local.delimiter}${random_string.rand4.result}"
+  random_org       = "${local.prefix}${local.delimiter}${random_pet.name.id}"
 }
 
 resource "random_pet" "name" {
