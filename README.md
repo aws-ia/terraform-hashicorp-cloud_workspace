@@ -16,7 +16,7 @@ Generate terraform cloud token
 
 `terraform login` 
 
-Export TERRAFORM_CONFIG
+Export TERRAFORM_CONFIG Variable
 
 `export TERRAFORM_CONFIG="$HOME/.terraform.d/credentials.tfrc.json"`
 
@@ -33,6 +33,37 @@ Export TERRAFORM_CONFIG
 Note: STS-based credentials _are optional_ but *highly recommended*. 
 
 > !!!!CAUTION!!!!: Make sure your credential are secured ourside version control (and follow secrets mangement bestpractices)
+
+
+# Deploy this module (instruction for linux or mac)
+
+Clone the aws-ia/terraform-hashicorp-cloud_workspace repository.
+
+`git clone https://github.com/aws-ia/terraform-hashicorp-cloud_workspace`
+
+Change directory to the root directory.
+
+`cd terraform-hashicorp-cloud_workspace`
+
+Change to setup_workspace directory
+
+`cd setup_workspace`. 
+
+> Run to following commands in order:
+
+`terraform init`
+
+`terraform apply`  or `terraform apply  -var-file="$HOME/.aws/terraform.tfvars"`.
+
+Change directory to deploy dir (previous command auto generates backend.hcl)
+
+`cd ../deploy`
+
+View you backend file
+
+`cat backend.hcl`
+
+> Terraform apply run remotely in Terraform Cloud (out will also stream to local env)
 
 # How to use this module to setup the deploy example for your module (instruction for linux or mac)
 
