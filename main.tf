@@ -16,12 +16,14 @@ provider "tfe" {
 locals {
   delimiter        = "-"
   prefix           = "aws-ia"
-  random_workspace = "${local.prefix}${local.delimiter}${random_string.rand4.result}"
-  random_org       = "${local.prefix}${local.delimiter}${random_pet.name.id}"
+  random_workspace = "ws-${local.prefix}${local.delimiter}${random_string.rand8.result}"
+  random_org       = "${local.prefix}${local.delimiter}${random_string.rand4.result}"
 }
 
-resource "random_pet" "name" {
-  length = 1
+resource "random_string" "rand8" {
+  length  = 8
+  special = false
+  upper   = false
 }
 
 resource "random_string" "rand4" {
