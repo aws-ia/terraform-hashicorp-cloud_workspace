@@ -1,3 +1,7 @@
+# Deprecation Notice
+
+This module has been deprecated. We have re-worked some of the core concepts and recommend using [workspace-orchestrator](https://registry.terraform.io/modules/aws-ia/workspace-orchestrator/tfe/latest) instead.
+
 > Note: This module is in alpha state and is likely to contain bugs and updates may introduce breaking changes. It is not recommended for production use at this time.
 
 # Terraform Cloud Workspace 
